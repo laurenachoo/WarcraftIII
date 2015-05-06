@@ -1,5 +1,5 @@
 # http://classic.battle.net/war3/human/units/footman.shtml
-
+require_relative 'unit'
 
 class Footman < Unit
 
@@ -7,11 +7,7 @@ class Footman < Unit
     super(60,10)
   end
 
-  def attack!(enemy)
-      enemy.damage(@attack_power)
+  def attack_building!(enemy)
+      enemy.damage(@attack_power / 2)
   end
-
-  def damage(dmg)
-    @health_points -= dmg
-  end  
 end
